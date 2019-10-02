@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.0">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -189,6 +189,13 @@ In this library the device names are the same as the pin names of the symbols, t
 <packages>
 </packages>
 <symbols>
+<symbol name="PE" urn="urn:adsk.eagle:symbol:26992/1" library_version="2">
+<wire x1="-1.27" y1="-0.762" x2="1.27" y2="-0.762" width="0.254" layer="94"/>
+<wire x1="-0.635" y1="-1.524" x2="0.635" y2="-1.524" width="0.254" layer="94"/>
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-4.445" y="-4.699" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="PE" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
 <symbol name="AGND" urn="urn:adsk.eagle:symbol:27018/1" library_version="2">
 <wire x1="-1.27" y1="0" x2="1.27" y2="0" width="0.254" layer="94"/>
 <wire x1="1.27" y1="0" x2="0" y2="-1.27" width="0.254" layer="94"/>
@@ -204,6 +211,19 @@ In this library the device names are the same as the pin names of the symbols, t
 </symbol>
 </symbols>
 <devicesets>
+<deviceset name="PE" urn="urn:adsk.eagle:component:27038/1" prefix="SUPPLY" library_version="2">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="PE" symbol="PE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="AGND" urn="urn:adsk.eagle:component:27066/1" prefix="SUPPLY" library_version="2">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
@@ -16539,6 +16559,7 @@ by R. Vogg  15.March.2002</description>
 </classes>
 <parts>
 <part name="U$1" library="MotorDriver" deviceset="A3946KLPTR-T" device="" package3d_urn="urn:adsk.eagle:package:12499989/1"/>
+<part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="PE" device=""/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="175TMP-0808" package3d_urn="urn:adsk.eagle:package:23412/2" value="10uF 25V"/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
@@ -16548,27 +16569,24 @@ by R. Vogg  15.March.2002</description>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uF"/>
+<part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="PE" device=""/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="80k"/>
+<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="PE" device=""/>
 <part name="SUPPLY7" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
 <part name="Q1" library="transistor-fet" library_urn="urn:adsk.eagle:library:396" deviceset="SPW47N60S5" device="" package3d_urn="urn:adsk.eagle:package:28538/1"/>
 <part name="Q2" library="transistor-fet" library_urn="urn:adsk.eagle:library:396" deviceset="SPW47N60S5" device="" package3d_urn="urn:adsk.eagle:package:28538/1"/>
 <part name="SUPPLY8" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device=""/>
 <part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
-<part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
-<part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
-<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="AGND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<wire x1="2.54" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="97"/>
-<wire x1="38.1" y1="35.56" x2="38.1" y2="22.86" width="0.1524" layer="97"/>
-<wire x1="38.1" y1="22.86" x2="2.54" y2="22.86" width="0.1524" layer="97"/>
-<wire x1="2.54" y1="22.86" x2="2.54" y2="35.56" width="0.1524" layer="97"/>
-<text x="12.7" y="20.32" size="1.778" layer="97">LOGIC GND</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="45.72" y="53.34" smashed="yes"/>
+<instance part="SUPPLY1" gate="PE" x="27.94" y="30.48" smashed="yes">
+<attribute name="VALUE" x="23.495" y="25.781" size="1.778" layer="96"/>
+</instance>
 <instance part="SUPPLY2" gate="G$1" x="63.5" y="33.02" smashed="yes">
 <attribute name="VALUE" x="60.833" y="29.845" size="1.778" layer="96"/>
 </instance>
@@ -16602,9 +16620,15 @@ by R. Vogg  15.March.2002</description>
 <attribute name="NAME" x="21.336" y="41.275" size="1.778" layer="95"/>
 <attribute name="VALUE" x="21.336" y="36.449" size="1.778" layer="96"/>
 </instance>
+<instance part="SUPPLY5" gate="PE" x="20.32" y="30.48" smashed="yes">
+<attribute name="VALUE" x="15.875" y="25.781" size="1.778" layer="96"/>
+</instance>
 <instance part="R3" gate="G$1" x="15.24" y="48.26" smashed="yes">
 <attribute name="NAME" x="11.43" y="49.7586" size="1.778" layer="95"/>
 <attribute name="VALUE" x="11.43" y="44.958" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY6" gate="PE" x="7.62" y="30.48" smashed="yes">
+<attribute name="VALUE" x="3.175" y="25.781" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY7" gate="G$1" x="45.72" y="27.94" smashed="yes">
 <attribute name="VALUE" x="43.053" y="24.765" size="1.778" layer="96"/>
@@ -16623,19 +16647,29 @@ by R. Vogg  15.March.2002</description>
 <instance part="SUPPLY9" gate="G$1" x="111.76" y="30.48" smashed="yes">
 <attribute name="VALUE" x="109.093" y="27.305" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY1" gate="G$1" x="27.94" y="30.48" smashed="yes">
-<attribute name="VALUE" x="25.273" y="27.305" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY5" gate="G$1" x="20.32" y="30.48" smashed="yes">
-<attribute name="VALUE" x="17.653" y="27.305" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY6" gate="G$1" x="7.62" y="30.48" smashed="yes">
-<attribute name="VALUE" x="4.953" y="27.305" size="1.778" layer="96"/>
-</instance>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="PE" class="0">
+<segment>
+<wire x1="27.94" y1="43.18" x2="27.94" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="PE" pin="PE"/>
+<pinref part="U$1" gate="G$1" pin="LGND"/>
+<wire x1="27.94" y1="43.18" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="SUPPLY5" gate="PE" pin="PE"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="10.16" y1="48.26" x2="7.62" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="48.26" x2="7.62" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="SUPPLY6" gate="PE" pin="PE"/>
+</segment>
+</net>
 <net name="AGND" class="0">
 <segment>
 <wire x1="63.5" y1="43.18" x2="63.5" y2="35.56" width="0.1524" layer="91"/>
@@ -16657,23 +16691,6 @@ by R. Vogg  15.March.2002</description>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <wire x1="111.76" y1="43.18" x2="111.76" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="SUPPLY9" gate="G$1" pin="AGND"/>
-</segment>
-<segment>
-<wire x1="27.94" y1="43.18" x2="27.94" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="LGND"/>
-<wire x1="27.94" y1="43.18" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="G$1" pin="AGND"/>
-</segment>
-<segment>
-<pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="SUPPLY5" gate="G$1" pin="AGND"/>
-</segment>
-<segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="48.26" x2="7.62" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="7.62" y1="48.26" x2="7.62" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="SUPPLY6" gate="G$1" pin="AGND"/>
 </segment>
 </net>
 <net name="N$2" class="0">
